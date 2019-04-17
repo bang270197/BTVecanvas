@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="568px" style="border: 1px solid #d0cdd3;"; ></canvas>
+<script>
+   /* function Circle(x,y,radius) {
+        this.x=x;
+        this.y=y;
+        this.radius=radius;
+    }
+    function createCircle() {
+        var ctx=document.getElementById("myCanvas").getContext("2d");
+        var circle=new Circle(500,500,80);
+        ctx.beginPath();
+        ctx.arc(circle.x,circle.y,circle.radius,0,2*Math.PI);
+        ctx.fill();
+    }
+    ///tao hinh tron voi ban kinh ngau nhien
+   function Circle(x,y,radius) {
+       this.x=x;
+       this.y=y;
+       this.radius=radius;
+   }
+   function createCircle() {
+       var ctx=document.getElementById("myCanvas").getContext("2d");
+       var radius=Math.floor(Math.random()*200);
+       var circle=new Circle(500,500,radius);
+       ctx.beginPath();
+       ctx.arc(circle.x,circle.y,circle.radius,0,2*Math.PI);
+       ctx.fill();
+   }
+//tao hinh tron voi mau ngau nhien
+   function Circle(x,y,radius) {
+       this.x=x;
+       this.y=y;
+       this.radius=radius;
+   }
+   function getRandomHex(){
+       return Math.floor(Math.random()*255);
+   }
+
+   function getRandomColor(){
+       var red = getRandomHex();
+       var green = getRandomHex();
+       var blue = getRandomHex();
+       return "rgb(" + red + "," + blue + "," + green +")";
+   }
+   function createCircle() {
+       var ctx=document.getElementById("myCanvas").getContext("2d");
+       var radius=Math.floor(Math.random()*100);
+       let xrandom=Math.floor(Math.random()*window.innerWidth);
+       let yrandom=Math.floor(Math.random()*window.innerHeight);
+       var color=getRandomColor();
+       var circle=new Circle(xrandom,yrandom,radius);
+       ctx.beginPath();
+       ctx.arc(circle.x,circle.y,circle.radius,0,2*Math.PI);
+       ctx.fillStyle=color;
+       ctx.fill();
+       setTimeout(createCircle,300);
+   }
+   createCircle();*/
+//tao nhieu hinh tron
+   function Circle(x,y,radius) {
+       this.x = x;
+       this.y = y;
+       this.radius = radius;
+
+       /* this.moveDown=function () {
+            this.y+=20;
+
+       this.moveLeft=function () {
+           this.x-=10;
+       }
+       this.moveUp=function () {
+           this.y-=10;
+       }*/
+   }
+
+      function createCircle() {
+          var ctx=document.getElementById("myCanvas").getContext("2d");
+          var xrandom=Math.floor(Math.random()*window.innerWidth);
+           var yrandom=Math.floor(Math.random()*window.innerHeight);
+
+          var circle=new Circle(xrandom,yrandom,80);
+
+
+       ctx.beginPath();
+       ctx.arc(circle.x,circle.y,circle.radius,0,2*Math.PI);
+       ctx.fill();
+
+
+   }
+function reset() {
+    var ctx=document.getElementById("myCanvas").getContext("2d");
+    ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
+}
+function run() {
+    setTimeout( createCircle,300);
+    setTimeout(reset,800);
+}
+   setInterval(run,850);
+
+
+
+</script>
+</body>
+</html>
